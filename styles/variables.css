@@ -1,1 +1,52 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+  --Inter: 'Inter-Variable';
+  --PressStart2P: 'PressStart2P';
+  --main-font-weight: 400;
+  --card-heading-font-weight: 700;
+  --container-width: clamp(375px, 260.56px + 30.52vw, 700px); /* Для хеадера */
+  --header-padding: clamp(120px, 117.18px + 0.75vw, 128px) clamp(14px, -23.50px + 10.00vw, 120.5px);
+  --header__title-logo-size: clamp(49px, 43.37px + 1.50vw, 65px);
+  --header__title-text-size: clamp(14px, 10.83px + 0.85vw, 23px);
+  --header-gap-between-logo-and-text: 20px;
+  --header-margin: 100px 0;
+
+  --card__font-main-size: 18px;
+  --card__font-button-size: 14px;
+  --card__title-container-padding: clamp(3px, 4.35px + -0.09vw, 4px) clamp(10px, 5.07px + 1.31vw, 24px) clamp(6px, 5.65px + 0.09vw, 7px) 10px;
+  --card-gap-between-texts: 27px;
+  --card-padding-texts: 25px 25px 25px 25px;
+
+  --floppy-icon-width: clamp(21px, 30.46px + -0.66vw, 28px);
+  --floppy-icon-height: clamp(21px, 30.46px + -0.66vw, 28px);
+  --dialog-button-width: clamp(310px, 299.79px + 2.72vw, 339px);
+
+  --white: #FFFFFF;
+  --black: #000000;
+  --contour-color: #000000;
+  --animation-fill-color: red;
+
+  --less-than-375-header-logo-size: clamp(46px, 28.55px + 5.45vw, 49px);
+
+  --background-image: 
+    /* 1. Сетка: Вертикальные полосы (слева направо) */
+    repeating-linear-gradient(
+      to right, 
+      #d3d3d3 0px 2px, 
+      transparent 2px 4px
+    ),
+    /* 2. Сетка: Горизонтальные полосы (сверху вниз) */
+    repeating-linear-gradient(
+      to bottom, 
+      #d3d3d3 0px 2px, 
+      transparent 2px 4px
+    ),
+    /* 3. Основной фон: Затемнение сверху вниз */
+    linear-gradient(
+      to bottom, 
+      #e7e7e7 0.01%, 
+      #1a1a1a
+    );
+}
+
