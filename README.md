@@ -1,1 +1,1 @@
-https://github.com/Obure22/zakrivayuschiy-teg-ad
+https://qpd1salas.github.io/zakrivayuschiy-teg-ad/

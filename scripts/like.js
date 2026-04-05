@@ -2,7 +2,6 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 Если эти классы поменять в HTML, скрипт перестанет работать. Будьте аккуратны.
@@ -13,12 +12,17 @@ const likeButtonArray = document.querySelectorAll('.card__like-button');
 const iconButtonArray = document.querySelectorAll('.card__icon-button');
 
 iconButtonArray.forEach((iconButton, index) => {
-  iconButton.onclick = () =>
+  iconButton.onclick = (e) => {
+    e.preventDefault();
     toggleIsLiked(likeHeartArray[index], likeButtonArray[index]);
+  };
 });
 
 likeButtonArray.forEach((button, index) => {
-  button.onclick = () => toggleIsLiked(likeHeartArray[index], button);
+  button.onclick = (e) => {
+    e.preventDefault();
+    toggleIsLiked(likeHeartArray[index], button);
+  };
 });
 
 function toggleIsLiked(heart, button) {
@@ -38,4 +42,24 @@ function setButtonText(heart, button) {
       500
     );
   }
+}
+
+const saveButton = document.querySelector('.dialog__button');
+const okButton = document.querySelector('.dialog__close-button');
+
+if (saveButton) {
+  saveButton.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const dialog = document.getElementById('dialog-id');
+    if (dialog && dialog.showModal) dialog.showModal();
+  });
+}
+
+if (okButton) {
+  okButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const dialog = document.getElementById('dialog-id');
+    if (dialog && dialog.close) dialog.close();
+  });
 }
